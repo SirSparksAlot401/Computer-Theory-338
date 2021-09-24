@@ -11,10 +11,7 @@ class State1 implements State{
     public void quarterInserted() {
         gumballMachine.setState(gumballMachine.getSpotForQuarter());
     }
-    @Override
-    public void quarterUsedToPay() {
-        gumballMachine.setState(gumballMachine.getCrank());
-    }
+
     @Override
     public void gumballDelivered() {
         gumballMachine.setState(gumballMachine.getGumballDeliveryTunnel());

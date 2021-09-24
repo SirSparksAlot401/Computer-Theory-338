@@ -19,13 +19,7 @@ class GumballMachine{
     public void quarterInserted(){
         currentState.quarterInserted();
         currentState = crank;
-        System.out.println("Quarter inserted, transitioning to crank state.");
-    }
-
-    public void quarterUsedToPay(){
-        currentState.quarterUsedToPay();
-        currentState = gumballDeliveryTunnel;
-        System.out.println("Quarter used to pay, transitioning to Gumball delivery tunnel.");
+        System.out.println("Quarter inserted, transitioning to gumball delivery state.");
     }
 
     public void gumballDelivered(){
