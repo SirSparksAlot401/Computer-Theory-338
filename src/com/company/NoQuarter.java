@@ -1,25 +1,27 @@
 package com.company;
 
-class State2 implements State{
+class NoQuarter implements State{
     private GumballMachine gumballMachine;
 
-    public State2(GumballMachine m){
+    public NoQuarter(GumballMachine m){
         gumballMachine = m;
     }
 
     @Override
     public void quarterInserted() {
+        System.out.println("Quarter added.");
         gumballMachine.setState(gumballMachine.getQuarter());
     }
 
     @Override
     public void removeQuarter() {
+        System.out.println("There is no quarter.");
         gumballMachine.setState(gumballMachine.getNoQuarter());
     }
 
     @Override
     public void crank(){
-        System.out.println("How are you in here, you're not supposed to be here....");
-    }
+        System.out.println("Please insert a quarter.");
+        gumballMachine.setState(gumballMachine.getNoQuarter());}
 
 }

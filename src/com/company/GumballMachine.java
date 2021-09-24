@@ -1,31 +1,29 @@
 package com.company;
 
 class GumballMachine{
-    private State spotForQuarter;
-    private State crank;
-    private State gumballDeliveryTunnel;
+    private State quarter;
+    private State noQuarter;
 
     private State currentState;
 
     public GumballMachine(){
 
-        spotForQuarter = new State1(GumballMachine.this);
-        crank = new State2(GumballMachine.this);
-        gumballDeliveryTunnel = new State3(GumballMachine.this);
+        quarter = new Quarter(GumballMachine.this);
+        noQuarter = new NoQuarter(GumballMachine.this);
 
-        currentState = spotForQuarter;
+        currentState = noQuarter;
     }
 
-    public void quarterInserted(){
+    public void crank(){
+        currentState.crank();
+    }
+
+    public void addQuarter(){
         currentState.quarterInserted();
-        currentState = crank;
-        System.out.println("Quarter inserted, transitioning to gumball delivery state.");
     }
 
-    public void gumballDelivered(){
-        currentState.gumballDelivered();
-        currentState = spotForQuarter;
-        System.out.println("Gumball was delivered, transitioning to spot for quarter state.");
+    public void removeQuarter(){
+        currentState.removeQuarter();
     }
 
     //Method to change state (called form where??)
@@ -33,16 +31,12 @@ class GumballMachine{
         currentState = state;
     }
 
-    public State getSpotForQuarter(){
-        return spotForQuarter;
+    public State getQuarter(){
+        return quarter;
     }
 
-    public State getCrank(){
-        return crank;
-    }
-
-    public State getGumballDeliveryTunnel(){
-        return gumballDeliveryTunnel;
+    public State getNoQuarter(){
+        return noQuarter;
     }
 
 

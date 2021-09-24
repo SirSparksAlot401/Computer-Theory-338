@@ -4,8 +4,14 @@ public class Main {
 
     public static void main(String[] args) {
         GumballMachine gumballMachine = new GumballMachine();
-        gumballMachine.quarterInserted();
-        gumballMachine.gumballDelivered();
+        gumballMachine.addQuarter();
+        gumballMachine.addQuarter();
+        gumballMachine.crank();
+        gumballMachine.removeQuarter();
+        gumballMachine.crank();
+        gumballMachine.addQuarter();
+        gumballMachine.removeQuarter();
+
     }
 }
 
@@ -13,6 +19,7 @@ public class Main {
 
 interface State{
     public void quarterInserted();
-    public void gumballDelivered();
+    public void removeQuarter();
+    public void crank();
 }
 
