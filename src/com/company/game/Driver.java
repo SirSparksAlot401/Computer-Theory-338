@@ -1,7 +1,8 @@
 package com.company.game;
 
+//Driver method for the game DFA.
 public class Driver {
-
+    //Main function
     public static void main(String[] args){
         GameLogic game = new GameLogic();
         game.right();
@@ -20,6 +21,7 @@ public class Driver {
         }
     }
 
+    //The GameState interface.
     interface GameState{
         void moveLeft();
         void moveRight();
