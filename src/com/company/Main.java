@@ -1,5 +1,6 @@
 package com.company;
-
+//Driver/Main class for the gumball machine.
+// This is the class for the gumball matching DFA implementation.
 public class Main {
 
     public static void main(String[] args) {
@@ -17,7 +18,7 @@ public class Main {
 }
 
 
-
+//State interface.
 interface State{
     void quarterInserted();
     void removeQuarter();
