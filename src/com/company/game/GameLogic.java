@@ -9,9 +9,10 @@ public class GameLogic {
     private GameState Prone;
     private GameState currentState;
     private int numActions;
+    private final int initialNumActions = 10;
 
     public GameLogic() {
-        numActions = 0;
+        numActions = initialNumActions;
         Right = new Right(GameLogic.this);
         Left = new Left(GameLogic.this);
         StandingState = new Stand(GameLogic.this);
@@ -21,31 +22,54 @@ public class GameLogic {
 
     }
 
-        private boolean haveMovesRemaining(){
-            if(numActions > 0){
-                return true;
-            }else{
-                return false;
-            }
+        private void haveMovesRemaining(){
+            currentState = StandingState;
+            System.out.println("I am sorry, but you have run out of moves, resetting you to the start state: Standing.");
+            numActions = initialNumActions;
         }
         public void right(){
-            currentState.moveRight();
+            if(numActions < 1) {
+                haveMovesRemaining();
+            }else{
+                currentState.moveRight();
+                numActions --;
+            }
         }
 
         public void left(){
-            currentState.moveLeft();
+            if(numActions < 1) {
+                haveMovesRemaining();
+            }else{
+                currentState.moveLeft();
+                numActions --;
+            }
         }
 
         public void jump(){
-            currentState.jump();
+            if(numActions < 1) {
+                haveMovesRemaining();
+            }else{
+                currentState.jump();
+                numActions --;
+            }
         }
 
         public void fireBall(){
-            currentState.fireBall();
-        }
+            if(numActions < 1) {
+                haveMovesRemaining();
+            }else{
+                currentState.fireBall();
+                numActions --;
+            }
+    }
 
         public void gravity(){
-            currentState.gravity();
+            if(numActions < 1) {
+                haveMovesRemaining();
+            }else{
+                currentState.gravity();
+                numActions --;
+            }
         }
 
         public GameState getRight(){

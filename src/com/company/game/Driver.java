@@ -9,6 +9,13 @@ public class Driver {
         game.jump();
         game.fireBall();
         game.gravity();
+        game.right();
+        game.left();
+        game.jump();
+        game.right();
+        game.left();
+        game.jump();
+        game.right();
 
         }
     }
