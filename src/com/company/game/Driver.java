@@ -2,7 +2,7 @@ package com.company.game;
 
 public class Driver {
 
-    public static void driver(String args[]){
+    public static void main(String args[]){
         GameLogic game = new GameLogic();
         game.right();
         game.left();
@@ -16,10 +16,10 @@ public class Driver {
 
 
     interface GameState{
-        public void moveLeft();
-        public void moveRight();
-        public void jump();
-        public void gravity();
-        public void fireBall();
+        void moveLeft();
+        void moveRight();
+        void jump();
+        void gravity();
+        void fireBall();
     }
 

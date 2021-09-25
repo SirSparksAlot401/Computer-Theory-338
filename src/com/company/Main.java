@@ -11,6 +11,7 @@ public class Main {
         gumballMachine.crank();
         gumballMachine.addQuarter();
         gumballMachine.removeQuarter();
+        gumballMachine.refill(5);
 
     }
 }
@@ -18,9 +19,9 @@ public class Main {
 
 
 interface State{
-    public void quarterInserted();
-    public void removeQuarter();
-    public void crank();
-    public void refill(int numGumballs);
+    void quarterInserted();
+    void removeQuarter();
+    void crank();
+    void refill(int numGumballs);
 }
 

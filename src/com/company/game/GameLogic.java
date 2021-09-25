@@ -11,14 +11,13 @@ public class GameLogic {
     private int numActions;
 
     public GameLogic() {
-        currentState = StandingState;
         numActions = 0;
         Right = new Right(GameLogic.this);
         Left = new Left(GameLogic.this);
         StandingState = new Stand(GameLogic.this);
         MidAir = new AirBorne(GameLogic.this);
         Prone = new Prone(GameLogic.this);
-
+        currentState = StandingState;
 
     }
 
