@@ -14,13 +14,26 @@ class Quarter implements State{
     }
 
     @Override
-    public void crank(){
+    public void crank() {
         System.out.println("Here is a gumball, enjoy!");
-        gumballMachine.setState(gumballMachine.getNoQuarter());}
+        gumballMachine.depreicateGumball();
+        if (gumballMachine.getNumGumballs() < 1) {
+            gumballMachine.setState(gumballMachine.getEmptyState());
+        } else {
+            gumballMachine.setState(gumballMachine.getNoQuarter());
+        }
+    }
 
     @Override
     public void removeQuarter() {
         System.out.println("Here is your quarter back.");
+        gumballMachine.setState(gumballMachine.getNoQuarter());
+    }
+
+    @Override
+    public void refill(int numGumballs){
+        System.out.println(numGumballs + "added to gumball machine.");
+        gumballMachine.refill(numGumballs);
         gumballMachine.setState(gumballMachine.getNoQuarter());
     }
 

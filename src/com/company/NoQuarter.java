@@ -22,6 +22,13 @@ class NoQuarter implements State{
     @Override
     public void crank(){
         System.out.println("Please insert a quarter.");
-        gumballMachine.setState(gumballMachine.getNoQuarter());}
+        gumballMachine.setState(gumballMachine.getNoQuarter());
+    }
 
+    @Override
+    public void refill(int numGumballs){
+        System.out.println(numGumballs + "added to gumball machine.");
+        gumballMachine.refill(numGumballs);
+        gumballMachine.setState(gumballMachine.getNoQuarter());
+    }
 }

@@ -21,5 +21,6 @@ interface State{
     public void quarterInserted();
     public void removeQuarter();
     public void crank();
+    public void refill(int numGumballs);
 }
 
