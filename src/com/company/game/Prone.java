@@ -33,7 +33,7 @@ public class Prone implements GameState {
     //Handling the fireball game action while in prone state.
     @Override
     public void fireBall(){
-        System.out.println("Dogged fireball, remaining on ground.");
+        System.out.println("Dodged fireball, remaining on ground.");
         game.setState(game.getProne());
     }
 

@@ -31,7 +31,7 @@ class AirBorne implements GameState {
     //Handling the fireball game event while AirBorne.
     @Override
     public void fireBall(){
-        System.out.println("Dogged fireball, remaining airborne.");
+        System.out.println("Dodged fireball, remaining airborne.");
         game.setState(game.getMidAir());
     }
 
